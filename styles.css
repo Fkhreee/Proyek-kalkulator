@@ -4,10 +4,52 @@
   font-weight: normal;
 }
 
+:root {
+  --gradient1 : linear-gradient(to right, #1078ab, #f6cd7e);
+  --gradient2 : linear-gradient(109.6deg,  rgba(245,56,56,1) 11.2%, rgba(234,192,117,1) 78% );
+}
+
+
+
+.title h1 {
+  padding :0%;
+  margin: 0;
+  border: 1px solid transparent;
+  color: transparent;
+  font-family: 'Lilita One', cursive;
+  font-weight: bolder;
+  font-size: 5rem;
+  background-color: #aeaeae;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: var(--gradient2) ;
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow( 3px 3px 3px black);
+  animation: animasibg infinite alternate 5s;
+
+}
+
 body {
   padding: 0;
-  margin: 50px;
-  background: linear-gradient(to right, #1078ab, #f6cd7e);
+  margin:auto;
+  background: var(--gradient1);
+  background-size: 200%;
+  background-position: left;
+  animation:  animasibg infinite alternate 25s;
+
+} 
+
+@keyframes animasibg {
+  from {
+    background-position: left;
+  }
+
+  to {
+    background-position: right;
+  }
 }
 
 .calculator-grid {
