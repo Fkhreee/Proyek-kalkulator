@@ -4,22 +4,22 @@ class Calculator {
     this.currentOperandTextElement = currentOperandTextElement
     this.clear()
   }
-
+//bikin aksi menghapus seluruh angka//
   clear() {
     this.currentOperand = ''
     this.previousOperand = ''
     this.operation = undefined
   }
-
+//bikin aksi menghapus 1 angka dibelakang//
   delete() {
     this.currentOperand = this.currentOperand.toString().slice(0, -1)
   }
-
+//aksi menambahkan angka//
   appendNumber(number) {
     if (number === '.' && this.currentOperand.includes('.')) return
     this.currentOperand = this.currentOperand.toString() + number.toString()
   }
-
+//bikin aksi memilih operasi perhitungan//
   chooseOperation(operation) {
     if (this.currentOperand === '') return
     if (this.previousOperand !== '') {
@@ -29,7 +29,7 @@ class Calculator {
     this.previousOperand = this.currentOperand
     this.currentOperand = ''
   }
-
+//bikin aksi perhitungan//
   compute() {
     let computation
     const prev = parseFloat(this.previousOperand)
@@ -55,7 +55,7 @@ class Calculator {
     this.operation = undefined
     this.previousOperand = ''
   }
-
+//display angka//
   getDisplayNumber(number) {
     const stringNumber = number.toString()
     const integerDigits = parseFloat(stringNumber.split('.')[0])
@@ -72,7 +72,7 @@ class Calculator {
       return integerDisplay
     }
   }
-
+//display angka ketika sudah menjalankan operasi//
   updateDisplay() {
     this.currentOperandTextElement.innerText =
       this.getDisplayNumber(this.currentOperand)
